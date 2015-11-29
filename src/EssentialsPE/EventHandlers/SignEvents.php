@@ -19,7 +19,7 @@ class SignEvents extends BaseEventHandler{
         $tile = $event->getBlock()->getLevel()->getTile(new Vector3($event->getBlock()->getFloorX(), $event->getBlock()->getFloorY(), $event->getBlock()->getFloorZ()));
         if($tile instanceof Sign){
             // Free sign
-            if(TextFormat::clean($tile->getText()[0], true) === "[Free]"){
+            if(TextFormat::clean($tile->getText()[0], true) === "[Dicks]"){
                 $event->setCancelled(true);
                 if(!$event->getPlayer()->hasPermission("essentials.sign.use.free")){
                     $event->getPlayer()->sendMessage(TextFormat::RED . "You don't have permissions to use this sign");
@@ -41,7 +41,7 @@ class SignEvents extends BaseEventHandler{
 
             // Gamemode sign
             // TODO Implement costs
-            elseif(TextFormat::clean($tile->getText()[0], true) === "[Gamemode]"){
+            elseif(TextFormat::clean($tile->getText()[0], true) === "[Game]"){
                 $event->setCancelled(true);
                 if(!$event->getPlayer()->hasPermission("essentials.sign.use.gamemode")){
                     $event->getPlayer()->sendMessage(TextFormat::RED . "You don't have permissions to use this sign");
@@ -99,7 +99,7 @@ class SignEvents extends BaseEventHandler{
 
             // Repair sign
             // TODO Implement costs
-            elseif(TextFormat::clean($tile->getText()[0], true) === "[Repair]"){
+            elseif(TextFormat::clean($tile->getText()[0], true) === "[Repar]"){
                 $event->setCancelled(true);
                 if(!$event->getPlayer()->hasPermission("essentials.sign.use.repair")){
                     $event->getPlayer()->sendMessage(TextFormat::RED . "You don't have permissions to use this sign");
@@ -147,7 +147,7 @@ class SignEvents extends BaseEventHandler{
 
             // Teleport sign
             // TODO Implement costs
-            elseif(TextFormat::clean($tile->getText()[0], true) === "[Teleport]"){
+            elseif(TextFormat::clean($tile->getText()[0], true) === "[Telep]"){
                 $event->setCancelled(true);
                 if(!$event->getPlayer()->hasPermission("essentials.sign.use.teleport")){
                     $event->getPlayer()->sendMessage(TextFormat::RED . "You don't have permissions to use this sign");
